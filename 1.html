@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>First page</title>
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+
+  <h1>HTML <em>infographics tags</em></h1>
+
+  <!-- Img + Map & Area -->
+  <h2>Img + Map & Area</h2>
+
+  <p>Click on <b>computer</b>, <b>phone</b>, or <b>coffee</b> to go to a new page and read more</p>
+  <img src="./img/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+  <map name="workmap">
+    <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://en.wikipedia.org/wiki/MacBook">
+    <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://en.wikipedia.org/wiki/IPhone">
+    <area shape="circle" coords="337,300,44" alt="Coffee" href="https://en.wikipedia.org/wiki/Coffee">
+  </map>
+
+  <!-- Canvas (w/ scripts) -->
+  <hr />
+  <h2>Canvas</h2>
+
+  <canvas id="myCanvas" width="170" height="100">
+    Your browser does not support the HTML canvas tag.
+  </canvas>
+  <script>
+  const c = document.getElementById("myCanvas");
+  const ctx = c.getContext("2d");
+
+  // Create gradient
+  const grd = ctx.createRadialGradient(75,50,5,90,60,100);
+  grd.addColorStop(0,"orangered");
+  grd.addColorStop(1,"white");
+
+  // Fill with gradient
+  ctx.fillStyle = grd;
+  ctx.fillRect(10,10,150,80);
+  </script>
+
+  <!-- SVG -->
+  <hr />
+  <h2>SVG</h2>
+
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+  </svg>
+
+  <svg width="200" height="200">
+    <polygon points="100,10 40,198 190,78 10,78 160,198"
+    style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+  </svg>
+
+  <svg width="200" height="130">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+    <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">Hey</text>
+    Sorry, your browser does not support inline SVG.
+  </svg>
+
+  <!-- Picture -->
+  <hr />
+  <h2>Picture</h2>
+
+  <picture>
+    <source media="(min-width: 650px)" srcset="./img/img_food.jpg">
+    <source media="(min-width: 465px)" srcset="./img/img_girl.jpg">
+    <img src="./img/img_car.jpg" style="width: auto;">
+  </picture>
+
+  <!-- IFrame | Object -->
+  <hr />
+  <h2>IFrame | Object</h2>
+
+  <iframe
+    width="425"
+    height="350"
+    scrolling="no"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=30.5373021434974%2C50.444249169896246%2C30.545842297000817%2C50.448006857816836&amp;layer=mapnik"
+  ></iframe>
+  <br/>
+  <small>
+    <a href="https://www.openstreetmap.org/#map=17/50.44613/30.54157">View Larger Map</a>
+  </small>
+
+  <hr />
+
+  <object
+    type="application/pdf"
+    data="./media/hanzo_reference.pdf"
+    width="1000"
+    height="1000"
+  ></object>
+
+  </body>
+</html>
